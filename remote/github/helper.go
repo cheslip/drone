@@ -49,7 +49,7 @@ func GetUserEmail(client *github.Client) (*github.User, error) {
 	}
 
 	for _, email := range emails {
-		if *email.Primary && *email.Verified {
+		if *email.Primary {
 			user.Email = email.Email
 			return user, nil
 		}
